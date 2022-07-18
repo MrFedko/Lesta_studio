@@ -22,3 +22,18 @@ class FirstFifo:
     @_size.setter
     def _size(self, value: int):
         self.__size = value
+
+    @staticmethod
+    def _is_full(count: int, size: int) -> bool:
+        return count == size
+
+    @staticmethod
+    def _is_empty(count: int) -> bool:
+        return count == 0
+
+    @staticmethod
+    def _next_index(size: int, new_index: int) -> int:
+        temp = new_index + 1
+        if temp >= size:
+            temp = 0
+        return temp

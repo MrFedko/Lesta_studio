@@ -61,3 +61,11 @@ class SecondFifo:
     @staticmethod
     def _is_full(count: int, size: int) -> bool:
         return count == size
+
+    @staticmethod
+    def _get_all_queue(head: (Node, int), size: int, res="") -> str:
+        if size == 0:
+            return res
+        else:
+            res += f'  {head} '
+            return SecondFifo._get_all_queue(head.next_element, size - 1, res)

@@ -72,3 +72,11 @@ class SecondFifo:
 
     def __repr__(self):
         return self._get_all_queue(self._head, self._size)
+
+    def push(self, el: int):
+        if self._is_full(self._count, self._size):
+            raise Exception("Is full")
+
+        self._head.data = el
+        self._count += 1
+        self._head = self._head.next_element

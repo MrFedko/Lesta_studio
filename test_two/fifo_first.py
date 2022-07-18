@@ -46,3 +46,14 @@ class FirstFifo:
 
         self._count += 1
         self._head = self._next_index(self._size, self._head)
+
+    def pop(self) -> int:
+        if self._is_empty(self._count):
+            raise Exception("Is empty")
+
+        item = self._items[self._tail]
+
+        self._count -= 1
+
+        self._tail = self._next_index(self._size, self._tail)
+        return item

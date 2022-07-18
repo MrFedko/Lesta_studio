@@ -37,3 +37,19 @@ class SecondFifo:
 
         self._head = first
         self._tail = first
+
+    @property
+    def _size(self) -> int:
+        return self.__size
+
+    @_size.setter
+    def _size(self, value: int):
+        self.__size = value
+
+    @property
+    def _count(self) -> int:
+        return self.__count
+
+    @_count.setter
+    def _count(self, value: int):
+        self.__count = value

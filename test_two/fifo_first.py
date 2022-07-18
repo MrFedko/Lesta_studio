@@ -57,3 +57,6 @@ class FirstFifo:
 
         self._tail = self._next_index(self._size, self._tail)
         return item
+
+    def __repr__(self):
+        return "".join([f'{x:5}' for x in self._items])

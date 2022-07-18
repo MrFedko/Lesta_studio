@@ -21,3 +21,19 @@ class Node:
 
     def __repr__(self):
         return str(self.data)
+
+
+class SecondFifo:
+    def __init__(self, size: int):
+        self._size = size
+        self._count = 0
+        temp = Node()
+        first = temp
+
+        for i in range(size - 1):
+            temp = Node(temp)
+
+        first.next_element = temp
+
+        self._head = first
+        self._tail = first

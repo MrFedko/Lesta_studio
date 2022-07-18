@@ -53,3 +53,11 @@ class SecondFifo:
     @_count.setter
     def _count(self, value: int):
         self.__count = value
+
+    @staticmethod
+    def _is_empty(value: int) -> bool:
+        return value == 0
+
+    @staticmethod
+    def _is_full(count: int, size: int) -> bool:
+        return count == size

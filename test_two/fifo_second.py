@@ -69,3 +69,6 @@ class SecondFifo:
         else:
             res += f'  {head} '
             return SecondFifo._get_all_queue(head.next_element, size - 1, res)
+
+    def __repr__(self):
+        return self._get_all_queue(self._head, self._size)

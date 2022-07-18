@@ -80,3 +80,14 @@ class SecondFifo:
         self._head.data = el
         self._count += 1
         self._head = self._head.next_element
+
+    def pop(self) -> int:
+        if self._is_empty(self._count):
+            raise Exception("Is empty")
+
+        item = self._tail.data
+
+        self._count -= 1
+
+        self._tail = self._tail.next_element
+        return item

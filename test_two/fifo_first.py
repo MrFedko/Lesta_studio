@@ -37,3 +37,12 @@ class FirstFifo:
         if temp >= size:
             temp = 0
         return temp
+
+    def push(self, el: int):
+        if self._is_full(self._count, self._size):
+            raise Exception("Is full")
+
+        self._items[self._head] = el
+
+        self._count += 1
+        self._head = self._next_index(self._size, self._head)

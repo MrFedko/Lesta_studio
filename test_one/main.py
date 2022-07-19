@@ -4,12 +4,8 @@ from statistics import mean
 
 if __name__ == '__main__':
     for i in range(1000):
-        is_even(3)
-        my_is_even(3)
-
-    for i in range(1000):
-        my_is_even(3)
-        is_even(3)
+        is_even(1000)
+        my_is_even(1000)
 
     result: list = []
     with open("is_even", "r") as file1, open("my_is_even", "r") as file2:
